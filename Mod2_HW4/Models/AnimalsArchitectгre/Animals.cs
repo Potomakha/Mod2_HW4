@@ -11,5 +11,12 @@ namespace Mod2_HW4.AnimalsArchitectгre
         public DateTime BirthDate { get; init; }
         public MovementTypes MovementType { get; init; }
         public CoverTypes CoverType { get; init; }
+        public int Age
+        {
+            get
+            {
+                return DateTime.Now.Year - BirthDate.Year;
+            }
+        }
     }
 }

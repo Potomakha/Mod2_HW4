@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mod2_HW4.AnimalsArchitectгre.HelpTypes
+namespace Mod2_HW4.Configs
 {
-    public enum ScalyTypes
+    public class ParkConfig
     {
-        Snake,
-        Lizard,
-        Amphisbene
+        public static int ParkCapacity => 20;
     }
 }

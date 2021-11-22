@@ -7,6 +7,8 @@ namespace Mod2_HW4
     {
         public static void Main(string[] args)
         {
+            var starter = new Starter();
+            starter.Run();
         }
     }
 }
