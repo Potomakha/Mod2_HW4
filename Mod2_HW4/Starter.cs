@@ -2,6 +2,7 @@
 using System.Text;
 using Mod2_HW4.AnimalsArchitectгre;
 using Mod2_HW4.Services;
+using Mod2_HW4.Extensions;
 
 namespace Mod2_HW4
 {
@@ -31,6 +32,16 @@ namespace Mod2_HW4
             var numTypes = _animalTypesCulculator.TypesCount(animals);
             Display(animals);
             Console.WriteLine($"Количетво видов {numTypes}");
+            Console.WriteLine(string.Empty);
+
+            Array.Sort(animals, new AnimalsComparerService());
+            Console.WriteLine("Массив отсортирован по возрасту: ");
+            Display(animals);
+            Console.WriteLine(string.Empty);
+
+            Console.WriteLine("Выборка животных: ");
+            var filtered = animals.Filter("о", 19);
+            Display(filtered);
         }
 
         private void Display(Animals[] animals)
@@ -42,7 +53,7 @@ namespace Mod2_HW4
                 animalsInfo.AppendLine($"{item.Name}. Возраст - {item.Age}");
             }
 
-            Console.WriteLine(animalsInfo.ToString());
+            Console.Write(animalsInfo.ToString());
         }
     }
 }

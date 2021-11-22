@@ -14,9 +14,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Providers\" />
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-
 </Project>
