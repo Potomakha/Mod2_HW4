@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Mod2_HW4.Interfaces;
+using Mod2_HW4.Services;
 
 namespace Mod2_HW4
 {
@@ -6,7 +8,13 @@ namespace Mod2_HW4
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var serviceProvider = new ServiceCollection()
+                .AddSingleton<IAnimalContainer, AnimalParkService>()
+                .AddTransient<IAnimalTypesCalculator, AnimalTypesCulculator>()
+                .AddTransient<Starter>()
+                .BuildServiceProvider();
+            var start = serviceProvider.GetService<Starter>();
+            start.Run();
         }
     }
 }
