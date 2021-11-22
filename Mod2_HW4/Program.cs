@@ -1,4 +1,5 @@
 ﻿using System;
+using Mod2_HW4.AnimalsArchitectгre;
 
 namespace Mod2_HW4
 {
@@ -6,7 +7,6 @@ namespace Mod2_HW4
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
