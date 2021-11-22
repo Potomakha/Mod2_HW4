@@ -3,20 +3,25 @@ using System.Text;
 using Mod2_HW4.AnimalsArchitectгre;
 using Mod2_HW4.Services;
 using Mod2_HW4.Extensions;
+using Mod2_HW4.Interfaces;
 
 namespace Mod2_HW4
 {
     public class Starter
     {
-        private readonly AnimalParkService _animalParkService;
+        private readonly IAnimalContainer _animalParkService;
+        private readonly IAnimalTypesCalculator _animalTypesCulculator;
         private readonly ParkInitService _parkInitService;
-        private readonly AnimalTypesCulculator _animalTypesCulculator;
 
         public Starter()
         {
-            _animalParkService = new AnimalParkService();
+        }
+
+        public Starter(IAnimalContainer animalContainer, IAnimalTypesCalculator animalTypesCalculator)
+        {
+            _animalParkService = animalContainer;
+            _animalTypesCulculator = animalTypesCalculator;
             _parkInitService = new ParkInitService();
-            _animalTypesCulculator = new AnimalTypesCulculator();
         }
 
         public void Run()
